@@ -7,11 +7,16 @@
 > 심사 기준 : Macro-F1 Score
 
 > 접근방법 : 
-> 1. 특성 전처리 및 특징선택, EDA 
+> 1. 특성 전처리 및 특징선택, EDA
+      (KNN-imputer, IsolationForest, Coef Based Feature Selection) 
 > 2. 지식전이학습 모델 구현
 > 	2.1 xgboost를 활용한 proba 산출
+                  (Stratified 5 fold를 통한 optuna로 하이퍼파라미터 산출)
 	2.2 제한된 특성들로 2.1에서 산출한 proba를 회귀하는 lgboost모델을 구축
-	2.3 각각의 모델들은 optuna를 통한 파라미터 튜닝을 거침.
+	     (Hold out으로 산출 -> 보완필요)
+
+> AL외에 모든 특성들에서 도메인지식과 맞지 않게 데이터가 튀는 경향이 보여 EDA를 진행하는데 있어서
+   제한적이였던점이 아쉽고, 두번째 회귀모델을 구축할때, Hold out으로만 구축하고 대회를 마무리하게 되어 아쉽다.
 
 > 기간 :  2022.11.07 ~ 2022.12.12 09:59
 
